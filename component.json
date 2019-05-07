@@ -1,0 +1,237 @@
+{
+    "title": "Android Management",
+    "description": "The Android Management API provides remote enterprise management of Android devices and apps.",
+    "docsUrl": "https://developers.google.com/android/management",
+    "url": "https://api.apis.guru/v2/specs/googleapis.com/androidmanagement/v1/swagger.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://androidmanagement.googleapis.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "Oauth2": {
+                "label": "Oauth 2.0 authentication",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "auth_uri": "https://accounts.google.com/o/oauth2/auth"
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "androidmanagement_enterprises_create": {
+            "main": "./lib/actions/androidmanagement_enterprises_create.js",
+            "title": "Creates an enterprise. This is the last step in the enterprise signup flow.",
+            "description": "Creates an enterprise. This is the last step in the enterprise signup flow.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/androidmanagement_enterprises_create.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "androidmanagement_signupUrls_create": {
+            "main": "./lib/actions/androidmanagement_signupUrls_create.js",
+            "title": "Creates an enterprise signup URL.",
+            "description": "Creates an enterprise signup URL.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/androidmanagement_signupUrls_create.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "androidmanagement_enterprises_enrollmentTokens_delete": {
+            "main": "./lib/actions/androidmanagement_enterprises_enrollmentTokens_delete.js",
+            "title": "Deletes an enrollment token. This operation invalidates the token, preventing its future use.",
+            "description": "Deletes an enrollment token. This operation invalidates the token, preventing its future use.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/androidmanagement_enterprises_enrollmentTokens_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "androidmanagement_enterprises_applications_get": {
+            "main": "./lib/actions/androidmanagement_enterprises_applications_get.js",
+            "title": "Gets info about an application.",
+            "description": "Gets info about an application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/androidmanagement_enterprises_applications_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "androidmanagement_enterprises_policies_patch": {
+            "main": "./lib/actions/androidmanagement_enterprises_policies_patch.js",
+            "title": "Updates or creates a policy.",
+            "description": "Updates or creates a policy.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/androidmanagement_enterprises_policies_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "androidmanagement_enterprises_devices_operations_cancel": {
+            "main": "./lib/actions/androidmanagement_enterprises_devices_operations_cancel.js",
+            "title": "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns google.rpc.Code.UNIMPLEMENTED. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to Code.CANCELLED.",
+            "description": "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns google.rpc.Code.UNIMPLEMENTED. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to Code.CANCELLED.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/androidmanagement_enterprises_devices_operations_cancel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "androidmanagement_enterprises_devices_issueCommand": {
+            "main": "./lib/actions/androidmanagement_enterprises_devices_issueCommand.js",
+            "title": "Issues a command to a device. The Operation resource returned contains a Command in its metadata field. Use the get operation method to get the status of the command.",
+            "description": "Issues a command to a device. The Operation resource returned contains a Command in its metadata field. Use the get operation method to get the status of the command.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/androidmanagement_enterprises_devices_issueCommand.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "androidmanagement_enterprises_devices_list": {
+            "main": "./lib/actions/androidmanagement_enterprises_devices_list.js",
+            "title": "Lists devices for a given enterprise.",
+            "description": "Lists devices for a given enterprise.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/androidmanagement_enterprises_devices_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "androidmanagement_enterprises_enrollmentTokens_create": {
+            "main": "./lib/actions/androidmanagement_enterprises_enrollmentTokens_create.js",
+            "title": "Creates an enrollment token for a given enterprise.",
+            "description": "Creates an enrollment token for a given enterprise.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/androidmanagement_enterprises_enrollmentTokens_create.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "androidmanagement_enterprises_policies_list": {
+            "main": "./lib/actions/androidmanagement_enterprises_policies_list.js",
+            "title": "Lists policies for a given enterprise.",
+            "description": "Lists policies for a given enterprise.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/androidmanagement_enterprises_policies_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "androidmanagement_enterprises_webTokens_create": {
+            "main": "./lib/actions/androidmanagement_enterprises_webTokens_create.js",
+            "title": "Creates a web token to access an embeddable managed Google Play web UI for a given enterprise.",
+            "description": "Creates a web token to access an embeddable managed Google Play web UI for a given enterprise.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/androidmanagement_enterprises_webTokens_create.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

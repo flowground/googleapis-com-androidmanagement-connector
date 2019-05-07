@@ -1,0 +1,54 @@
+{
+    "type": "object",
+    "properties": {
+        "name": {
+            "required": true,
+            "type": "string"
+        },
+        "wipeDataFlags": {
+            "type": "array",
+            "items": {
+                "enum": [
+                    "WIPE_DATA_FLAG_UNSPECIFIED",
+                    "PRESERVE_RESET_PROTECTION_DATA",
+                    "WIPE_EXTERNAL_STORAGE"
+                ],
+                "type": "string"
+            }
+        },
+        "alt": {
+            "type": "string",
+            "enum": [
+                "json",
+                "media",
+                "proto"
+            ],
+            "default": "json"
+        },
+        "callback": {
+            "type": "string"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "uploadType": {
+            "type": "string"
+        },
+        "upload_protocol": {
+            "type": "string"
+        }
+    }
+}
